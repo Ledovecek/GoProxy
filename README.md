@@ -1,4 +1,4 @@
 # GoProxy
 
- - Light-weight simple proxy server written in Go.
+ - Light-weight simple reverse proxy server written in Go.
 
