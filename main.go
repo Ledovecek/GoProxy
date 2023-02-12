@@ -32,9 +32,9 @@ func handleClient(conn net.Conn) {
 	if err != nil {
 		return
 	}
+	buffer := make([]byte, 256)
 	go handleIncomingClientRequest(&dial, &conn)
 	for {
-		buffer := make([]byte, 255)
 		bytesCount, err := dial.Read(buffer)
 		if err != nil {
 			return
@@ -49,8 +49,8 @@ func handleClient(conn net.Conn) {
 }
 
 func handleIncomingClientRequest(serverConnection *net.Conn, clientConnection *net.Conn) {
+	buffer := make([]byte, 256)
 	for {
-		buffer := make([]byte, 255)
 		bytesCount, err := (*clientConnection).Read(buffer)
 		if err != nil {
 			return
