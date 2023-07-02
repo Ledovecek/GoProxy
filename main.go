@@ -54,7 +54,7 @@ func handleClient(conn net.Conn) {
 }
 
 func handleIncomingClientRequest(serverConnection *net.Conn, clientConnection *net.Conn) {
-	buffer := make([]byte, 255)
+	buffer := make([]byte, 256)
 	for {
 		bytesCount, err := (*clientConnection).Read(buffer)
 		if err != nil {
